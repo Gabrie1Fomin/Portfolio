@@ -1,0 +1,172 @@
+.grid-container { /* grid container for home page, 5x5 */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 20% 20% 20% 20% 20%;/*divides the columns into 5 equal parts*/
+    grid-template-rows: 20% 20% 20% 20% 20%;/*divides the rows into 5 equal parts */
+    row-gap: 50px;
+}
+
+.grid-container2 { /* grid container for other pages, 5x8 */
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    padding-left:10px;
+    padding-right:10px;
+    grid-template-columns: 20% 20% 20% 20% 20%; /*divides the columns into 5 equal parts*/
+    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%; /*divides the rows into 8 equal parts */
+}
+
+.pastassignments1, .aboutme1, .personalprojects1, .recentassignments1, .aboutme2, .personalprojects2, .recentassignments2, .pastassignments2, .otherbutton1, .otherbutton2 {
+    display: grid;
+    place-items: center; /* Centers the button inside */
+    width: 100%; /* makes button width of the box */
+    height: 100%; /*makes button the height of the box */
+}
+
+/* Home Page Button styling green with pink text*/
+.pastassignments2 button, .recentassignments2 button {
+    width: 100%;
+    height: 150%; 
+    font-family: "neonWords", sans-serif;
+    background-color: rgba(0, 255, 0, 0.8);
+    box-shadow: 0 0 20px 10px rgb(52, 182, 0);
+    color: black;
+    border: 10%;
+    border-radius: 20px;
+    font-size: 60px;
+    text-align: center;
+    align-self:top;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Home Page Button styling blue with orange text*/
+.aboutme2 button, .personalprojects2 button{
+    width: 100%;
+    height: 150%; 
+    font-family: "neonWords", sans-serif;
+    background-color: rgba(0, 247, 255, 0.8);
+    box-shadow: 0 0 20px 10px rgb(0, 199, 199);
+    color: black;
+    border: 10%;
+    border-radius: 20px;
+    font-size: 60px;
+    text-align: center;
+    align-self:top;
+    transition: all 0.3s ease;
+}
+
+.otherbutton2 button{
+    width: 75%; /* 75% of column width */
+    height: 50%; /* 50% of row height */
+    font-family: "neonWords", sans-serif;
+    background-color: rgba(0, 255, 0, 0.8);
+    box-shadow: 0 0 20px 10px rgb(52, 182, 0);
+    color: black;
+    border-radius: 20px;
+    font-size: clamp(16px, 2vw, 24px);
+    text-align: center;
+    align-self:center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.otherbutton1 button{
+    width: 75%; /* 75% of column width */
+    height: 50%; /* 50% of row height */
+    font-family: "neonWords", sans-serif;
+    background-color: rgba(0, 247, 255, 0.8);
+    box-shadow: 0 0 20px 10px rgb(0, 199, 199);
+    color: black;
+    border-radius: 20px;
+    font-size: clamp(16px, 2vw, 24px);
+    text-align: center;
+    align-self:center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+} 
+
+
+/* Other page button styling white*/
+.aboutme1 button, .personalprojects1 button, .recentassignments1 button, .returnhomebutton button, .pastassignments1 button{
+    width: 75%; /* 75% of column width */
+    height: 50%; /* 50% of row height */
+    font-family: "neonWords", sans-serif;
+    background-color: rgba(255, 255, 255, .8);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 1);
+    color: black;
+    border-radius: 20px;
+    font-size: clamp(16px, 2vw, 24px);
+    text-align: center;
+    align-self:center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+.aboutme2 button:hover, .personalprojects2 button:hover, .recentassignments2 button:hover,
+.pastassignments2 button:hover,.returnhomebutton button:hover, .personalprojects2 button:hover,
+.returnhomebox button:hover, .aboutme1 button:hover, .personalprojects1 button:hover,
+ .recentassignments1 button:hover, .pastassignments1 button:hover, .otherbutton1 button:hover, .otherbutton2 button:hover{
+    box-shadow: 0 0 20px 60px alpha(0, 192, 192, 0.9);  /* Stronger glow */
+    transform: scale(1.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.homepage{ /*top section for home page*/
+    display:grid;
+    width: 100%;
+    height: 75%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: "neonWords";
+    font-size: 2vw;
+    border: black;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .9);
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1);
+}
+
+.textbox{
+    display:grid;
+    border-radius: 20px;
+    width: 500px;
+    height: 500px;
+    font-family: "maintext";
+    text-indent: 20px;
+    font-size: 3.7vh;
+    border:2px solid black;
+        background-color: rgba(255, 255, 255, .8);
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1);
+}
+
+#title {
+    grid-column-start: 3;
+    grid-row: 1;
+}
+
+@font-face {
+    font-family: "neonWords";
+    src: url('assets/fonts/Neonline.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "maintext";
+    src: url('assets/fonts/GROSTICK.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: black;
+    background-image: url(assets/images/AdobeStock_554445260.png);
+    background-size: 100%;
+    background-position-x: 0px;
+    color: black;
+}
