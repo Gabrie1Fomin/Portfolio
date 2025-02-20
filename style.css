@@ -1,11 +1,11 @@
 .grid-container { /* grid container for home page, 5x5 */
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: grid;
     justify-content: center;
     grid-template-columns: 20% 20% 20% 20% 20%;/*divides the columns into 5 equal parts*/
     grid-template-rows: 20% 20% 20% 20% 20%;/*divides the rows into 5 equal parts */
-    row-gap: 50px;
+    row-gap: 25px;
 }
 
 .grid-container2 { /* grid container for other pages, 5x8 */
@@ -18,6 +18,24 @@
     grid-template-columns: 20% 20% 20% 20% 20%; /*divides the columns into 5 equal parts*/
     grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%; /*divides the rows into 8 equal parts */
 }
+
+#canvas-wrapper {
+    display: flex;
+    justify-content: center; /* Centers the canvas horizontally */
+    align-items: center; /* Centers the canvas vertically */
+    grid-column: 1 / -1; /* Makes it span the entire width of the grid */
+    grid-row: 1 / -1;
+    height: 100vh;
+}
+
+#sketch-container {
+    display: flex;
+    justify-content: center; /* Centers p5.js canvas */
+    align-items: center;
+    width: 100%; /* Ensures it takes full width */
+    height:100%;
+}
+
 
 .pastassignments1, .aboutme1, .personalprojects1, .recentassignments1, .aboutme2, .personalprojects2, .recentassignments2, .pastassignments2, .otherbutton1, .otherbutton2 {
     display: grid;
@@ -98,10 +116,13 @@
     background-color: rgba(255, 255, 255, .8);
     box-shadow: 0 0 20px 10px rgba(255, 255, 255, 1);
     color: black;
+    display:grid;
     border-radius: 20px;
     font-size: clamp(16px, 2vw, 24px);
+    justify-content: center;
+    justify-self: center;
     text-align: center;
-    align-self:center;
+    align-items:center;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -163,6 +184,12 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "comicSans";
+    src: url('assets/fonts/comicSans.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
     background-color: black;
     background-image: url(assets/images/AdobeStock_554445260.png);

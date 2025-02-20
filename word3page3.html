@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <div id="grid-container2" style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(8, 1fr); gap: 20px;">
+        <div id="canvas-wrapper">
+            <div id="sketch-container3"></div> <!-- p5.js canvas container -->
+        </div>
+        
+        <div class = "homepage" style="grid-column:3; grid-row: 1;">change this when done</div> <!--Header home page section-->
+
+        <!-- Wrap the button in a div and apply the grid layout to the div -->
+        <div class="returnhomebutton" style="grid-row: 8; grid-column: 1; justify-content: center; align-items: center; padding-top:5%;">
+            <button onclick="window.location.href='index.html'">Return Home</button>
+        </div>
+
+    </div>
+
+    <script src="sketch2.js"></script> <!-- Your p5.js sketch -->
+</body>
+</html>
