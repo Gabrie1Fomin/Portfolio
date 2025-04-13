@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Picker Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f8f8f8; }
+    .question { margin-bottom: 20px; display: none; }
+    .question.active { display: block; }
+    .result { margin-top: 20px; font-weight: bold; }
+    button { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>🍽️ Food Picker Quiz</h1>
+  <div id="quizContainer"></div>
+  <button id="nextButton" style="display:none;">Next</button>
+  <div class="result" id="result"></div>
+  <button id="retryButton" style="display:none;" onclick="startQuiz()">Try Again</button>
+
+  <script src="foodpicker.js"></script>
+</body>
+</html>
