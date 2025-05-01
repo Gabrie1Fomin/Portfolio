@@ -1,74 +1,84 @@
 // Food Database (I used AI to help generate more foods, as well as formatting them to be usable)
 const foodDatabase = [
-        // Mexican
-        { name: "Veggie Burrito", cuisine: "Mexican", mealType: "Lunch", temperature: "Hot", prep: "Fresh", time: "Medium", vegetarian: true },
-        { name: "Beef Tacos", cuisine: "Mexican", mealType: "Dinner", temperature: "Hot", prep: "Grilled", time: "Medium", vegetarian: false },
-        { name: "Huevos Rancheros", cuisine: "Mexican", mealType: "Breakfast", temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: true },
-      
-        // American
-        { name: "Pulled Pork Sandwich", cuisine: "American", mealType: "Lunch", temperature: "Hot", prep: "Grilled", time: "Medium", vegetarian: false },
-        { name: "Grilled Cheese", cuisine: "American", mealType: "Lunch", temperature: "Hot", prep: "Grilled", time: "Quick", vegetarian: true },
-        { name: "Bagel & Cream Cheese", cuisine: "American", mealType: "Breakfast", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
-        { name: "Avocado Toast", cuisine: "American", mealType: "Breakfast", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
-        { name: "Quinoa Salad", cuisine: "American", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
-        { name: "French Toast", cuisine: "American", mealType: "Breakfast", temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: true },
-        { name: "BBQ Ribs", cuisine: "American", mealType: "Dinner", temperature: "Hot", prep: "Grilled", time: "Long", vegetarian: false },
-        { name: "Chili Con Carne", cuisine: "American", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Long", vegetarian: false },
-      
-        // Middle Eastern
-        { name: "Falafel Wrap", cuisine: "Middle Eastern", mealType: "Lunch", temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: true },
-        { name: "Chicken Tikka", cuisine: "Middle Eastern", mealType: "Dinner", temperature: "Hot", prep: "Grilled", time: "Long", vegetarian: false },
-        { name: "Lentil Soup", cuisine: "Middle Eastern", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
-        { name: "Shakshuka", cuisine: "Middle Eastern", mealType: "Breakfast", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
-        { name: "Mujadara", cuisine: "Middle Eastern", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
-      
-        // Asian
-        { name: "Sushi", cuisine: "Asian", mealType: "Dinner", temperature: "Cold", prep: "Fresh", time: "Long", vegetarian: false },
-        { name: "Tofu Stir Fry", cuisine: "Asian", mealType: "Dinner", temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: true },
-        { name: "Ramen", cuisine: "Asian", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Long", vegetarian: false },
-        { name: "Vegetable Spring Rolls", cuisine: "Asian", mealType: "Snack", temperature: "Hot", prep: "Fried", time: "Quick", vegetarian: true },
-        { name: "Shrimp Pad Thai", cuisine: "Asian", mealType: "Dinner", temperature: "Hot", prep: "Stir-fried", time: "Medium", vegetarian: false },
-        { name: "Miso Soup", cuisine: "Asian", mealType: "Snack", temperature: "Hot", prep: "Boiled", time: "Quick", vegetarian: true },
-        { name: "Tempura", cuisine: "Asian", mealType: "Snack", temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: false },
-      
-        // Indian
-        { name: "Paneer Tikka", cuisine: "Indian", mealType: "Dinner", temperature: "Hot", prep: "Grilled", time: "Medium", vegetarian: true },
-        { name: "Chana Masala", cuisine: "Indian", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
-        { name: "Biryani", cuisine: "Indian", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Long", vegetarian: false },
-        { name: "Poha", cuisine: "Indian", mealType: "Breakfast", temperature: "Hot", prep: "Boiled", time: "Quick", vegetarian: true },
-      
-        // Italian
-        { name: "Caprese Salad", cuisine: "Italian", mealType: "Snack", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
-        { name: "Eggplant Parmesan", cuisine: "Italian", mealType: "Dinner", temperature: "Hot", prep: "Fried", time: "Long", vegetarian: true },
-        { name: "Margherita Pizza", cuisine: "Italian", mealType: "Dinner", temperature: "Hot", prep: "Baked", time: "Medium", vegetarian: true },
-        { name: "Stuffed Peppers", cuisine: "Italian", mealType: "Dinner", temperature: "Hot", prep: "Baked", time: "Medium", vegetarian: true },
-        { name: "Gnocchi with Pesto", cuisine: "Italian", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
-      
-        // French
-        { name: "Cheese Omelette", cuisine: "French", mealType: "Breakfast", temperature: "Hot", prep: "Fried", time: "Quick", vegetarian: true },
-        { name: "Croissant", cuisine: "French", mealType: "Breakfast", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
-        { name: "Ratatouille", cuisine: "French", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
-        { name: "Quiche Lorraine", cuisine: "French", mealType: "Lunch", temperature: "Hot", prep: "Baked", time: "Medium", vegetarian: false },
-      
-        // Chinese
-        { name: "Kung Pao Chicken", cuisine: "Chinese", mealType: "Dinner", temperature: "Hot", prep: "Stir-fried", time: "Medium", vegetarian: false },
-        { name: "Vegetable Dumplings", cuisine: "Chinese", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
-        { name: "Mapo Tofu", cuisine: "Chinese", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
-        { name: "Chow Mein", cuisine: "Chinese", mealType: "Lunch", temperature: "Hot", prep: "Stir-fried", time: "Medium", vegetarian: false },
-      
-        // Vietnamese
-        { name: "Pho", cuisine: "Vietnamese", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Long", vegetarian: false },
-        { name: "Banh Mi", cuisine: "Vietnamese", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Medium", vegetarian: false },
-        { name: "Spring Rolls", cuisine: "Vietnamese", mealType: "Snack", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
-        { name: "Vermicelli Bowl", cuisine: "Vietnamese", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Medium", vegetarian: true },
-      
-        // German
-        { name: "Bratwurst", cuisine: "German", mealType: "Dinner", temperature: "Hot", prep: "Grilled", time: "Medium", vegetarian: false },
-        { name: "Potato Pancakes", cuisine: "German", mealType: "Lunch", temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: true },
-        { name: "Sauerbraten", cuisine: "German", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Long", vegetarian: false },
-        { name: "Spaetzle", cuisine: "German", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Medium"}
-      
-  ];
+  // MEXICAN
+  { name: "Veggie Burrito", cuisine: "Mexican", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Fresh", time: "Medium", vegetarian: true },
+  { name: "Beef Tacos", cuisine: "Mexican", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Grilled", time: "Medium", vegetarian: false },
+  { name: "Huevos Rancheros", cuisine: "Mexican", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: true },
+  { name: "Chilled Mango Salad", cuisine: "Mexican", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+  { name: "Grilled Chicken Quesadilla", cuisine: "Mexican", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Grilled", time: "Medium", vegetarian: false },
+  { name: "Cold Black Bean Wrap", cuisine: "Mexican", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+
+  // AMERICAN
+  { name: "Pulled Pork Sandwich", cuisine: "American", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Grilled", time: "Medium", vegetarian: false },
+  { name: "Grilled Cheese", cuisine: "American", mealType: "Lunch", temperature: "Hot", prep: "Grilled", time: "Quick", vegetarian: true },
+  { name: "Bagel & Cream Cheese", cuisine: "American", mealType: "Breakfast", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+  { name: "Avocado Toast", cuisine: "American", mealType: "Breakfast", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+  { name: "Quinoa Salad", cuisine: "American", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+  { name: "French Toast", cuisine: "American", mealType: "Breakfast", temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: true },
+  { name: "BBQ Ribs", cuisine: "American", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Grilled", time: "Long", vegetarian: false },
+  { name: "Chili Con Carne", cuisine: "American", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Boiled", time: "Long", vegetarian: false },
+  { name: "Fried Veggie Nuggets", cuisine: "American", mealType: "Snack", temperature: "Hot", prep: "Fried", time: "Quick", vegetarian: true },
+  { name: "Cold Chicken Pasta Salad", cuisine: "American", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Medium", vegetarian: false },
+
+  // MIDDLE EASTERN
+  { name: "Falafel Wrap", cuisine: "Middle Eastern", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: true },
+  { name: "Chicken Tikka", cuisine: "Middle Eastern", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Grilled", time: "Long", vegetarian: false },
+  { name: "Lentil Soup", cuisine: "Middle Eastern", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
+  { name: "Shakshuka", cuisine: "Middle Eastern", mealType: "Breakfast", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
+  { name: "Mujadara", cuisine: "Middle Eastern", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
+  { name: "Cold Tabbouleh Salad", cuisine: "Middle Eastern", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+
+  // ASIAN
+  { name: "Sushi", cuisine: "Asian", mealType: "Dinner", temperature: "Cold", prep: "Fresh", time: "Long", vegetarian: false },
+  { name: "Tofu Stir Fry", cuisine: "Asian", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: true },
+  { name: "Ramen", cuisine: "Asian", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Long", vegetarian: false },
+  { name: "Vegetable Spring Rolls", cuisine: "Asian", mealType: "Snack", temperature: "Hot", prep: "Fried", time: "Quick", vegetarian: true },
+  { name: "Shrimp Pad Thai", cuisine: "Asian", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Stir-fried", time: "Medium", vegetarian: false },
+  { name: "Cold Sesame Noodle Salad", cuisine: "Asian", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+
+  // INDIAN
+  { name: "Paneer Tikka", cuisine: "Indian", mealType: "Dinner", temperature: "Hot", prep: "Grilled", time: "Medium", vegetarian: true },
+  { name: "Chana Masala", cuisine: "Indian", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
+  { name: "Biryani", cuisine: "Indian", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Long", vegetarian: false },
+  { name: "Poha", cuisine: "Indian", mealType: "Breakfast", temperature: "Hot", prep: "Boiled", time: "Quick", vegetarian: true },
+  { name: "Cold Cucumber Raita Bowl", cuisine: "Indian", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+
+  // ITALIAN
+  { name: "Caprese Salad", cuisine: "Italian", mealType: "Snack", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+  { name: "Eggplant Parmesan", cuisine: "Italian", mealType: "Dinner", temperature: "Hot", prep: "Fried", time: "Long", vegetarian: true },
+  { name: "Margherita Pizza", cuisine: "Italian", mealType: "Dinner", temperature: "Hot", prep: "Baked", time: "Medium", vegetarian: true },
+  { name: "Stuffed Peppers", cuisine: "Italian", mealType: "Dinner", temperature: "Hot", prep: "Baked", time: "Medium", vegetarian: true },
+  { name: "Gnocchi with Pesto", cuisine: "Italian", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
+  { name: "Cold Orzo Salad", cuisine: "Italian", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+
+  // FRENCH
+  { name: "Cheese Omelette", cuisine: "French", mealType: "Breakfast", temperature: "Hot", prep: "Fried", time: "Quick", vegetarian: true },
+  { name: "Croissant", cuisine: "French", mealType: "Breakfast", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+  { name: "Ratatouille", cuisine: "French", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
+  { name: "Quiche Lorraine", cuisine: "French", mealType: "Lunch", temperature: "Hot", prep: "Baked", time: "Medium", vegetarian: false },
+  { name: "Niçoise Salad", cuisine: "French", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: false },
+
+  // CHINESE
+  { name: "Kung Pao Chicken", cuisine: "Chinese", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Stir-fried", time: "Medium", vegetarian: false },
+  { name: "Vegetable Dumplings", cuisine: "Chinese", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
+  { name: "Mapo Tofu", cuisine: "Chinese", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
+  { name: "Chow Mein", cuisine: "Chinese", mealType: ["Lunch", "Dinner"], temperature: "Hot", prep: "Stir-fried", time: "Medium", vegetarian: false },
+  { name: "Cold Soba Salad", cuisine: "Chinese", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+
+  // VIETNAMESE
+  { name: "Pho", cuisine: "Vietnamese", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Long", vegetarian: false },
+  { name: "Banh Mi", cuisine: "Vietnamese", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Medium", vegetarian: false },
+  { name: "Spring Rolls", cuisine: "Vietnamese", mealType: "Snack", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: true },
+  { name: "Vermicelli Bowl", cuisine: "Vietnamese", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Medium", vegetarian: true },
+
+  // GERMAN
+  { name: "Bratwurst", cuisine: "German", mealType: "Dinner", temperature: "Hot", prep: "Grilled", time: "Medium", vegetarian: false },
+  { name: "Potato Pancakes", cuisine: "German", mealType: "Lunch", temperature: "Hot", prep: "Fried", time: "Medium", vegetarian: true },
+  { name: "Sauerbraten", cuisine: "German", mealType: "Dinner", temperature: "Hot", prep: "Boiled", time: "Long", vegetarian: false },
+  { name: "Spaetzle", cuisine: "German", mealType: "Lunch", temperature: "Hot", prep: "Boiled", time: "Medium", vegetarian: true },
+  { name: "Cold Sausage Salad", cuisine: "German", mealType: "Lunch", temperature: "Cold", prep: "Fresh", time: "Quick", vegetarian: false }
+];
+
   
   // Questions for the quiz
   const questions = [
@@ -133,42 +143,65 @@ const foodDatabase = [
     }
   ];
   
-  let currentQuestionIndex = 0; // Tracks which question the user is currently on
-let answers = []; // Stores the user's answers
-
-function renderQuestion() {
-  const question = questions[currentQuestionIndex]; // Get the current question
-  const questionContainer = document.getElementById("quizContainer"); // Get the quiz container element
-
-  // Clear any existing content in the container
-  questionContainer.innerHTML = '';
-
-  // Create and display the question text
-  const questionText = document.createElement("p");
-  questionText.textContent = question.text;
-  questionContainer.appendChild(questionText);
-
-  // Create buttons for each option in the question
-  question.options.forEach((option, index) => {
-    const optionButton = document.createElement("button");
-    optionButton.textContent = option.text; // Set button text
-    optionButton.onclick = () => handleAnswer(option.value); // Handle answer selection
-    questionContainer.appendChild(optionButton); // Add button to the container
-  });
-}
-
-function handleAnswer(answer) {
-  answers.push(answer); // Save the user's answer
-
-  // Move to the next question
-  currentQuestionIndex++;
-
-  if (currentQuestionIndex < questions.length) {
-    renderQuestion(); // Render next question
-  } else {
-    showResult(); // Show results if quiz is done
+  function renderQuestion() {
+    const question = questions[currentQuestionIndex];
+    const questionContainer = document.getElementById("quizContainer");
+    questionContainer.innerHTML = '';
+  
+    const questionText = document.createElement("p");
+    questionText.textContent = question.text;
+    questionContainer.appendChild(questionText);
+  
+    let selectedAnswer = null;
+  
+    // Option buttons container
+    const optionsWrapper = document.createElement("div");
+    optionsWrapper.id = "optionsWrapper";
+    questionContainer.appendChild(optionsWrapper);
+  
+    question.options.forEach((option, index) => {
+      const optionButton = document.createElement("button");
+      optionButton.textContent = option.text;
+      optionButton.classList.add("option-button");
+      
+      optionButton.onclick = () => {
+        // Remove 'selected' class from all buttons
+        const allButtons = document.querySelectorAll(".option-button");
+        allButtons.forEach(btn => btn.classList.remove("selected"));
+  
+        // Add 'selected' class to the clicked button
+        optionButton.classList.add("selected");
+  
+        selectedAnswer = option.value;
+        nextButton.disabled = false; // Enable the "Next" button
+      };
+  
+      optionsWrapper.appendChild(optionButton);
+    });
+  
+    // Create the "Next" button
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Next";
+    nextButton.disabled = true;
+    nextButton.style.marginTop = "1rem";
+  
+    // Define nextButton's onclick function here
+    nextButton.onclick = () => {
+      if (selectedAnswer !== null) {
+        answers.push(selectedAnswer); // Save the selected answer
+        currentQuestionIndex++; // Move to the next question
+  
+        if (currentQuestionIndex < questions.length) {
+          renderQuestion(); // Render the next question
+        } else {
+          showResult(); // Show results if it's the last question
+        }
+      }
+    };
+  
+    questionContainer.appendChild(nextButton);
   }
-}
+  
 
 function showResult() {
   const resultContainer = document.getElementById("result"); // Get result display element
@@ -178,15 +211,15 @@ function showResult() {
     return (
       food.vegetarian === answers[0] &&
       food.cuisine === answers[1] &&
-      food.mealType === answers[2] &&
       food.temperature === answers[3] &&
-      food.prep === answers[4]
+      food.prep === answers[4] &&
+      (Array.isArray(food.mealType) ? food.mealType.includes(answers[2]) : food.mealType === answers[2])
     );
   });
 
   // Show matching food results or a fallback message
   if (matchingFoods.length > 0) {
-    resultContainer.textContent = "We recommend: " + matchingFoods.map(food => food.name).join(", ");
+    resultContainer.textContent = "Recommended Food: " + matchingFoods.map(food => food.name).join(", ");
   } else {
     resultContainer.textContent = "Sorry, we couldn't find a match.";
   }

@@ -4,16 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Food Picker Quiz</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f8f8f8; }
-    .question { margin-bottom: 20px; display: none; }
-    .question.active { display: block; }
-    .result { margin-top: 20px; font-weight: bold; }
-    button { margin-top: 10px; }
-  </style>
+  <link rel="stylesheet" href="foodpickerstyle.css" />
 </head>
 <body>
   <h1>🍽️ Food Picker Quiz</h1>
+
+  <div class="nav-buttons">
+    <a href="foodpickerabout.html" class="nav-btn">Why did I Make This?</a>
+    <a href="howtousefoodpicker.html" class="nav-btn">How to Use</a>
+    <a href="futureplansfoodpicker.html" class="nav-btn">Future Plans</a>
+  </div>
+
   <div id="quizContainer"></div>
   <button id="nextButton" style="display:none;">Next</button>
   <div class="result" id="result"></div>

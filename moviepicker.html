@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Mood Matcher</title>
+</head>
+<body>
+    <h1>Movie Mood Matcher</h1>
+    
+    <label for="mood">Select your mood: </label>
+    <select id="mood">
+        <option value="happy">Happy</option>
+        <option value="sad">Sad</option>
+        <option value="angry">Angry</option>
+        <option value="bored">Bored</option>
+        <option value="romantic">Romantic</option>
+        <option value="nostalgic">Nostalgic</option>
+        <option value="cozy">Cozy</option>
+        <option value="motivated">Motivated</option>
+        <option value="lonely">Lonely</option>
+        <option value="chaotic">Chaotic</option>
+        <option value="scared">Scared</option>
+        <option value="curious">Curious</option>
+        <option value="rebellious">Rebellious</option>
+        <option value="chill">Chill</option>
+        <option value="existential">Existential</option>
+    </select>
+    <br>
+    <label for="yearRange">How new do you want the movie to be?</label>
+    <br>
+
+    <input type="range" id="yearRange" min="0" max="100" value="100" step="1">
+    <span id="yearValue">Current Selection: 2024</span>
+    
+    <br>
+    
+    <label for="popularCheckbox">Do you want to watch a popular movie?</label>
+    <input type="checkbox" id="popularCheckbox">
+
+    <br>
+
+    <button onclick="findMovie()">Find Movie</button>
+    <button onclick="nextMovie()">Next Movie</button>
+
+    <div id="results"></div>
+
+    <script src="moviepicker.js"></script>
+</body>
+</html>
