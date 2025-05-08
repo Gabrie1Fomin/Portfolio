@@ -4,47 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Mood Matcher</title>
+    <link rel="stylesheet" href="moviepickerstyle.css">
 </head>
 <body>
-    <h1>Movie Mood Matcher</h1>
-    
-    <label for="mood">Select your mood: </label>
-    <select id="mood">
-        <option value="happy">Happy</option>
-        <option value="sad">Sad</option>
-        <option value="angry">Angry</option>
-        <option value="bored">Bored</option>
-        <option value="romantic">Romantic</option>
-        <option value="nostalgic">Nostalgic</option>
-        <option value="cozy">Cozy</option>
-        <option value="motivated">Motivated</option>
-        <option value="lonely">Lonely</option>
-        <option value="chaotic">Chaotic</option>
-        <option value="scared">Scared</option>
-        <option value="curious">Curious</option>
-        <option value="rebellious">Rebellious</option>
-        <option value="chill">Chill</option>
-        <option value="existential">Existential</option>
-    </select>
-    <br>
-    <label for="yearRange">How new do you want the movie to be?</label>
-    <br>
+    <div class="grid-wrapper">
+        <div class="container">
+            <h1>Movie Mood Matcher</h1>
 
-    <input type="range" id="yearRange" min="0" max="100" value="100" step="1">
-    <span id="yearValue">Current Selection: 2024</span>
-    
-    <br>
-    
-    <label for="popularCheckbox">Do you want to watch a popular movie?</label>
-    <input type="checkbox" id="popularCheckbox">
+            <label for="mood">Choose your mood:</label>
+            <select id="mood">
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="angry">Angry</option>
+                <option value="bored">Bored</option>
+                <option value="romantic">Romantic</option>
+                <option value="nostalgic">Nostalgic</option>
+                <option value="cozy">Cozy</option>
+                <option value="motivated">Motivated</option>
+                <option value="lonely">Lonely</option>
+                <option value="chaotic">Chaotic</option>
+                <option value="scared">Scared</option>
+                <option value="curious">Curious</option>
+                <option value="rebellious">Rebellious</option>
+                <option value="chill">Chill</option>
+                <option value="existential">Existential</option>
+            </select>
 
-    <br>
+            <button id="randomMoodButton" onclick="selectRandomMood()">Pick Random Mood for Me</button>
 
-    <button onclick="findMovie()">Find Movie</button>
-    <button onclick="nextMovie()">Next Movie</button>
+            <label for="yearRange">How new do you want the movie to be?</label>
+            <input type="range" id="yearRange" min="0" max="100" value="50">
+            <span id="yearValue">1997</span>
 
-    <div id="results"></div>
+            <label class="inline-label">
+                Do you want to watch a popular movie?
+                <input type="checkbox" id="popularCheckbox">
+            </label>
+
+            <button id="findMovieButton" onclick="findMovie()">Find Movie</button>
+            <button id="nextMovieButton" onclick="nextMovie()">Next Result</button>
+
+            <div id="results"></div>
+        </div>
+    </div>
 
     <script src="moviepicker.js"></script>
 </body>
+
 </html>

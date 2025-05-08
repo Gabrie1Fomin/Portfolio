@@ -46,6 +46,8 @@ let movies = [];
 let currentMovieIndex = 0;
 
 async function fetchMovies() { // Fetch movies based on selected mood, year range, and popularity
+    document.getElementById('findMovieButton').disabled = true;
+
     const mood = document.getElementById('mood').value;
     const sliderValue = document.getElementById('yearRange').value;
     const isPopular = document.getElementById('popularCheckbox').checked;
@@ -79,6 +81,7 @@ async function fetchMovies() { // Fetch movies based on selected mood, year rang
     movies = [...new Set(movies.map(movie => movie.id))].map(id => movies.find(movie => movie.id === id));
 
     if (movies.length === 0) {
+        document.getElementById('findMovieButton').disabled = false;
         document.getElementById('results').innerHTML = '<p>No movies found for your selection. Please try again with different filters!</p>';
     }
 }
@@ -99,15 +102,17 @@ function displayMovie() { // Display a random movie from the filtered list
     // Display the movie details in the results section formatted with HTML
     document.getElementById('results').innerHTML = `
         <h3>${movie.title}</h3>
-        ${movie.poster_path ? `<img src="${IMAGE_BASE_URL}${movie.poster_path}" alt="Poster for ${movie.title}" />` : '<p>No poster available</p>'}
+        ${movie.poster_path ? `<img src="${IMAGE_BASE_URL}${movie.poster_path}" alt="Poster for ${movie.title}" />` : '<p>No poster available</p>'} // Displays the movie poster if available
         <p><strong>Genres:</strong> ${genres}</p>
-        <p>${movie.overview || 'No description available.'}</p>
+        <p><strong>Movie Summary: </strong> ${movie.overview || 'No description available.'}</p>
+
     `;
 }
 
 // Event listeners for the buttons
 async function findMovie() {
     await fetchMovies();
+    document.getElementById('findMovieButton').disabled = true;
     displayMovie();
 }
 
@@ -123,12 +128,24 @@ function nextMovie() {
         <h3>${movie.title}</h3>
         ${movie.poster_path ? `<img src="${IMAGE_BASE_URL}${movie.poster_path}" alt="Poster for ${movie.title}" />` : '<p>No poster available</p>'}
         <p><strong>Genres:</strong> ${genres}</p>
-        <p>${movie.overview || 'No description available.'}</p>
+        <p><strong>Movie Summary: </strong>${movie.overview || 'No description available.'}</p>
     `;
+}
+
+function selectRandomMood() {
+    const moodSelect = document.getElementById('mood');
+    const moods = Array.from(moodSelect.options).map(option => option.value);
+    const randomMood = moods[Math.floor(Math.random() * moods.length)];
+    moodSelect.value = randomMood;
+    findMovie(); 
 }
 
 // Updates the year value displayed next to the slider
 document.getElementById('yearRange').addEventListener('input', (e) => {
     const year = 1970 + Math.round((e.target.value / 100) * (2024 - 1970));
     document.getElementById('yearValue').textContent = year;
+});
+
+document.getElementById('mood').addEventListener('change', () => {
+    document.getElementById('findMovieButton').disabled = false;
 });
