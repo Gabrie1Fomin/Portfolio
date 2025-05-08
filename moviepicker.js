@@ -67,27 +67,24 @@ async function fetchMovies() { // Fetch movies based on selected mood, year rang
 
         try {
             const response = await fetch(url);
-            const data = await response.json();
-
+            const data = await response.json(); // Fetches the data from the API
             if (data.results) {
                 movies = movies.concat(data.results); // Adds the results to the movies array
             }
         } catch (error) {
-            console.error("Error fetching movies for genre " + genre + ":", error);
+            console.error("Error fetching movies for genre " + genre + ":", error); // Logs any errors that occur during the fetch
         }
     }
-
-    // Remove duplicate movies based on ID
-    movies = [...new Set(movies.map(movie => movie.id))].map(id => movies.find(movie => movie.id === id));
+    movies = [...new Set(movies.map(movie => movie.id))].map(id => movies.find(movie => movie.id === id)); // Filters out duplicate movies by their ID
 
     if (movies.length === 0) {
-        document.getElementById('findMovieButton').disabled = false;
-        document.getElementById('results').innerHTML = '<p>No movies found for your selection. Please try again with different filters!</p>';
+        document.getElementById('findMovieButton').disabled = false; // Re-enable the button if no movies are found
+        document.getElementById('results').innerHTML = '<p>No movies found for your selection. Please try again with different filters!</p>'; // Displays a message if no movies are found
     }
 }
 
 function getGenresText(genreIds) { // Convert genre IDs to genre names
-    return genreIds.map(id => genreMap[id] || 'Unknown').join(', ');
+    return genreIds.map(id => genreMap[id] || 'Unknown').join(', '); // Maps the genre IDs to their corresponding names and joins them into a string
 }
 
 function displayMovie() { // Display a random movie from the filtered list
@@ -96,15 +93,15 @@ function displayMovie() { // Display a random movie from the filtered list
         return;
     }
 
-    const movie = movies[Math.floor(Math.random() * movies.length)];
+    const movie = movies[Math.floor(Math.random() * movies.length)]; // Select a random movie from the filtered list
+    const genres = getGenresText(movie.genre_ids); // Get the genre names based on the genre IDs
 
-    const genres = getGenresText(movie.genre_ids);
     // Display the movie details in the results section formatted with HTML
     document.getElementById('results').innerHTML = `
         <h3>${movie.title}</h3>
-        ${movie.poster_path ? `<img src="${IMAGE_BASE_URL}${movie.poster_path}" alt="Poster for ${movie.title}" />` : '<p>No poster available</p>'} // Displays the movie poster if available
-        <p><strong>Genres:</strong> ${genres}</p>
-        <p><strong>Movie Summary: </strong> ${movie.overview || 'No description available.'}</p>
+        ${movie.poster_path ? `<img src="${IMAGE_BASE_URL}${movie.poster_path}" alt="Poster for ${movie.title}" />` : '<p>No poster available</p>'}
+        <p><strong>Genres:</strong> ${genres}</p> // Displays the genres of the movie
+        <p><strong>Movie Summary: </strong> ${movie.overview || 'No description available.'}</p> // Displays the movie summary if available
 
     `;
 }
